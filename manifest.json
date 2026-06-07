@@ -9,6 +9,14 @@
   "imageUrl": "",
   "versions": [
     {
+      "version": "0.1.0.13",
+      "changelog": "Config page: prominent warning not to leave Subtitle languages blank (blank pulls every language and can time out the remote), plus a save-time warning when subtitle download is on with no language filter.",
+      "targetAbi": "10.10.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.13/jellyfink_0.1.0.13.zip",
+      "checksum": "d2b19120fccb1865367dc926b4f1beea",
+      "timestamp": "2026-06-07T01:49:13Z"
+    },
+    {
       "version": "0.1.0.12",
       "changelog": "Bug fixes: support remotes hosted under a subpath (relative request paths); unique per-server DeviceId to avoid token churn; proxy stream endpoint accepts HEAD requests.",
       "targetAbi": "10.10.0.0",
