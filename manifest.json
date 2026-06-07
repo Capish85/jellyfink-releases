@@ -9,6 +9,14 @@
   "imageUrl": "",
   "versions": [
     {
+      "version": "0.1.0.12",
+      "changelog": "Bug fixes: support remotes hosted under a subpath (relative request paths); unique per-server DeviceId to avoid token churn; proxy stream endpoint accepts HEAD requests.",
+      "targetAbi": "10.10.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.12/jellyfink_0.1.0.12.zip",
+      "checksum": "9f4f8d91aca4a0c57bb83bbf3c5e50cc",
+      "timestamp": "2026-06-07T01:21:51Z"
+    },
+    {
       "version": "0.1.0.11",
       "changelog": "Subtitles: hide broken embedded tracks (AllowEmbeddedSubtitles=None) and download working sidecar .srt resiliently (per-track timeout, language filter). Richer metadata: cast/crew, studios, ratings, premiere date, provider IDs, tagline, sort title, plus backdrops/fanart. Audit fixes: auth self-healing, reconcile marker guard, proxy disposal.",
       "targetAbi": "10.10.0.0",
