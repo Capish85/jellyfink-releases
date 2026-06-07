@@ -9,6 +9,14 @@
   "imageUrl": "",
   "versions": [
     {
+      "version": "0.1.0.11",
+      "changelog": "Subtitles: hide broken embedded tracks (AllowEmbeddedSubtitles=None) and download working sidecar .srt resiliently (per-track timeout, language filter). Richer metadata: cast/crew, studios, ratings, premiere date, provider IDs, tagline, sort title, plus backdrops/fanart. Audit fixes: auth self-healing, reconcile marker guard, proxy disposal.",
+      "targetAbi": "10.10.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.11/jellyfink_0.1.0.11.zip",
+      "checksum": "a3fc09b55a2f8cdab5c1339cda3ffed0",
+      "timestamp": "2026-06-07T00:57:16Z"
+    },
+    {
       "version": "0.1.0.10",
       "changelog": "Bug-fix pass: auth self-healing on 401; reconcile data-loss guard (marker file); proxy stream disposal; fetch subtitle metadata only when enabled; manage-library-settings toggle; HTML escaping; cleanup.",
       "targetAbi": "10.10.0.0",
