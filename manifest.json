@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.24",
+      "changelog": "SECURITY: fixes Direct-mode exposing the remote account credential to clients. Proxy mode is now the secure default — your server relays the stream so the remote URL/credential never reaches clients. The .strm no longer embeds the remote key (local URL auto-derived if not set). If you use Direct mode, do so only with fully-trusted users and a dedicated low-privilege remote account.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.24/jellyfink_0.1.0.24.zip",
+      "checksum": "d77f6bba5b6def8c19480b1f32ef22b1",
+      "timestamp": "2026-06-09T20:33:58Z"
+    },
+    {
       "version": "0.1.0.23",
       "changelog": "Sync now auto-ingests items: after syncing, libraries are scanned automatically so remote movies/shows appear on the home screen and are playable without a manual library scan. Uses the remote's metadata (local .nfo, no internet lookups).",
       "targetAbi": "10.11.0.0",
