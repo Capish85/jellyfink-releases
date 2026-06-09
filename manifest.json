@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.18",
+      "changelog": "Content filters (year/rating/genre), quiet-hours scheduling, failure/offline webhook notifications, per-run sync report, stream audit log, auto Direct->Proxy fallback, two-way favorites, per-server bitrate cap, library item-count preview, and the REMOTE library badge image. Includes a security review (no issues; webhook restricted to http(s)).",
+      "targetAbi": "10.10.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.18/jellyfink_0.1.0.18.zip",
+      "checksum": "29faff98270de7719d76fdc8a2ad6ff1",
+      "timestamp": "2026-06-09T15:12:10Z"
+    },
+    {
       "version": "0.1.0.17",
       "changelog": "Add a real-time remote-server health check: each configured server shows online/offline (with version or 'unreachable'/'timed out') on the config page, refreshed on load and after save. New GET /Jellyfink/Health endpoint.",
       "targetAbi": "10.10.0.0",
