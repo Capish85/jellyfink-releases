@@ -1,7 +1,7 @@
 # Jellyfink
 
 A Jellyfin server plugin that connects to one or more **remote Jellyfin servers** and shows their
-libraries on **your** server — Plex-style library sharing, but **no media files are copied**. Only the
+libraries on **your** server, but **no media files are copied**. Only the
 remote's metadata, artwork and playback links live locally; the remote stays the source of truth and
 streams on demand.
 
