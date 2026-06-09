@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.27",
+      "changelog": "Tabbed config page (no more long scroll). Subtitles: when downloading sidecars, the embedded tracks are hidden so the picker isn't a long duplicated list; movie sync is faster (parallel) with shorter per-track timeouts. Deselecting a library (or removing a server) + sync now fully removes it immediately — no manual rescan/restart needed.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.27/jellyfink_0.1.0.27.zip",
+      "checksum": "3367ba9b335e645dd22d222af80cdd2d",
+      "timestamp": "2026-06-09T21:10:30Z"
+    },
+    {
       "version": "0.1.0.26",
       "changelog": "Cleaner config page: settings are now grouped into collapsible cards (Remote servers, Library & playback, Library appearance, Subtitles, Watch state & favorites, Advanced) with a tidier layout and clearer save bar.",
       "targetAbi": "10.11.0.0",
