@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.25",
+      "changelog": "Subtitles: 'Download subtitles' now saves sidecars in their original format (SRT/ASS), which is what makes remote subtitles work on the web client and other transcoding players (embedded subs only work on direct-play apps). Pair with Proxy mode for best results.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.25/jellyfink_0.1.0.25.zip",
+      "checksum": "023f1427cbb1be1b8ead45d0b756de35",
+      "timestamp": "2026-06-09T20:40:26Z"
+    },
+    {
       "version": "0.1.0.24",
       "changelog": "SECURITY: fixes Direct-mode exposing the remote account credential to clients. Proxy mode is now the secure default — your server relays the stream so the remote URL/credential never reaches clients. The .strm no longer embeds the remote key (local URL auto-derived if not set). If you use Direct mode, do so only with fully-trusted users and a dedicated low-privilege remote account.",
       "targetAbi": "10.11.0.0",
