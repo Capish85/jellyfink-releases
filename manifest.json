@@ -6,8 +6,16 @@
   "overview": "Remote Jellyfin library sharing - a metadata and playback bridge.",
   "owner": "capish85",
   "category": "General",
-  "imageUrl": "",
+  "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
+    {
+      "version": "0.1.0.15",
+      "changelog": "Big feature + hardening pass (28 items): pull watch-state from remote; per-user mapping; music libraries; mirror collections; live WebSocket sync; targeted library scan; retry/backoff + HTTP timeouts; paginated fetch; configurable played threshold; signed-token TTL; rate-limited + validated stream endpoint; richer connection test; sync status panel; series-folder de-dup; parallel asset downloads; plugin icon.",
+      "targetAbi": "10.10.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.15/jellyfink_0.1.0.15.zip",
+      "checksum": "bb4b8b72c5516101aa35c0a829fd683f",
+      "timestamp": "2026-06-09T11:35:01Z"
+    },
     {
       "version": "0.1.0.14",
       "changelog": "Subtitles: expose the remote's embedded subtitle tracks so they can be picked like a direct connection (no sidecar download needed); sidecar download stays optional/off. Add a custom 'Library name prefix' (e.g. 'Remote ·') to group remote libraries together in the sidebar/home.",
