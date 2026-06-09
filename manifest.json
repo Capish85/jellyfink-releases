@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.23",
+      "changelog": "Sync now auto-ingests items: after syncing, libraries are scanned automatically so remote movies/shows appear on the home screen and are playable without a manual library scan. Uses the remote's metadata (local .nfo, no internet lookups).",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.23/jellyfink_0.1.0.23.zip",
+      "checksum": "6850617d1ab253f19a8bad65fd7bff21",
+      "timestamp": "2026-06-09T20:07:37Z"
+    },
+    {
       "version": "0.1.0.22",
       "changelog": "Library REMOTE badge now applies to existing libraries too: it overrides Jellyfin's auto-generated collage image (applied once per library, tracked by a .jellyfink-badge marker; delete it to re-badge). Badge results are now written to jellyfink.log.",
       "targetAbi": "10.11.0.0",
