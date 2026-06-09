@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.20",
+      "changelog": "Jellyfin 10.11 support (now requires 10.11+/net9). Fixes the TypeLoad/MissingMethod crashes on 10.11 (moved User type, SkiaSharp 3, changed task-trigger and user APIs). Validated on 10.11.11: plugin loads, user dropdown works, sync runs, REMOTE library badge applies. Also includes the dedicated jellyfink.log.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.20/jellyfink_0.1.0.20.zip",
+      "checksum": "9df5b2523daea64af32c5180b86ecb87",
+      "timestamp": "2026-06-09T16:13:52Z"
+    },
+    {
       "version": "0.1.0.19",
       "changelog": "Fix Jellyfin 10.11 compatibility (IUserManager.Users MissingMethodException that broke the user dropdown and watch-state/favorites). Add a dedicated jellyfink.log file in Jellyfin's log directory for the plugin's own events (sync results, failures, stream audit, notifications); path shown in the status panel. The library-badge step now logs whether it applied or why it skipped.",
       "targetAbi": "10.10.0.0",
