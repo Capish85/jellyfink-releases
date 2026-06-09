@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.21",
+      "changelog": "Jellyfink now appears in the admin Plugins sidebar (left menu) for one-click access, in addition to the plugin catalog tile.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.21/jellyfink_0.1.0.21.zip",
+      "checksum": "503d6cb19fdfbb588a05d90815d3d5ea",
+      "timestamp": "2026-06-09T19:06:12Z"
+    },
+    {
       "version": "0.1.0.20",
       "changelog": "Jellyfin 10.11 support (now requires 10.11+/net9). Fixes the TypeLoad/MissingMethod crashes on 10.11 (moved User type, SkiaSharp 3, changed task-trigger and user APIs). Validated on 10.11.11: plugin loads, user dropdown works, sync runs, REMOTE library badge applies. Also includes the dedicated jellyfink.log.",
       "targetAbi": "10.11.0.0",
