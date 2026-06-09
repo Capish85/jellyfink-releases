@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.16",
+      "changelog": "Round-2 polish (movies & TV only). Removed the music feature. Fixed: collection artwork now set; watch-state pull no longer clobbers newer local progress; season.nfo written; per-server 'max items' override; live-sync connection health shown in status; servers now sync concurrently; config-schema migration scaffold; quieter logs; added an automated test project.",
+      "targetAbi": "10.10.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.16/jellyfink_0.1.0.16.zip",
+      "checksum": "a91485bd84352d170ea7f24f81a39ad0",
+      "timestamp": "2026-06-09T11:59:04Z"
+    },
+    {
       "version": "0.1.0.15",
       "changelog": "Big feature + hardening pass (28 items): pull watch-state from remote; per-user mapping; music libraries; mirror collections; live WebSocket sync; targeted library scan; retry/backoff + HTTP timeouts; paginated fetch; configurable played threshold; signed-token TTL; rate-limited + validated stream endpoint; richer connection test; sync status panel; series-folder de-dup; parallel asset downloads; plugin icon.",
       "targetAbi": "10.10.0.0",
