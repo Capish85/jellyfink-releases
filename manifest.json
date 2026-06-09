@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "0.1.0.17",
+      "changelog": "Add a real-time remote-server health check: each configured server shows online/offline (with version or 'unreachable'/'timed out') on the config page, refreshed on load and after save. New GET /Jellyfink/Health endpoint.",
+      "targetAbi": "10.10.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v0.1.0.17/jellyfink_0.1.0.17.zip",
+      "checksum": "ac30f8cead9367b26048e9b95c67de9f",
+      "timestamp": "2026-06-09T12:12:25Z"
+    },
+    {
       "version": "0.1.0.16",
       "changelog": "Round-2 polish (movies & TV only). Removed the music feature. Fixed: collection artwork now set; watch-state pull no longer clobbers newer local progress; season.nfo written; per-server 'max items' override; live-sync connection health shown in status; servers now sync concurrently; config-schema migration scaffold; quieter logs; added an automated test project.",
       "targetAbi": "10.10.0.0",
