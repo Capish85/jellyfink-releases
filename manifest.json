@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.10.0.0",
+      "changelog": "Fix duplicates when merging with a local library: remove the {edition-Remote} tag from .strm filenames. Jellyfin interprets edition tags as separate library entries (two posters). Without the tag, Jellyfin matches by provider ID (TMDB/IMDB from the .nfo) and merges local and remote versions of the same title into a single item — one poster, one 'Play Version' picker on play. Existing edition-tagged files are automatically cleaned up on the first sync after updating.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.10.0/jellyfink_1.10.0.0.zip",
+      "checksum": "df382afb78d207c8557083aefafdd13a",
+      "timestamp": "2026-06-10T23:00:00Z"
+    },
+    {
       "version": "1.9.0.0",
       "changelog": "Fix stream 401: cache the HMAC signing secret for the process lifetime so JF's internal config-reload mechanism (which bypasses DecryptConfig) cannot corrupt the in-memory key. Previously, base.SaveConfiguration() could replace the in-memory Configuration with an encrypted clone, causing GetOrCreateSecret to decode ciphertext as key bytes — producing a different HMAC from what signed the .strm tokens, giving 401 on every play attempt after a sync. Now the secret is loaded once on first use and held in a static cache; even if the Configuration object is replaced, the same key is used throughout the JF session. Also adds encrypted-form detection as a fallback and more diagnostic logging in the stream endpoint.",
       "targetAbi": "10.11.0.0",
