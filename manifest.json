@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.6.7.0",
+      "changelog": "Fix config page: merge-with and watch-state dropdowns now use explicit dark-theme styling instead of browser-default white background. Per-server options row (watch state, max items, max bitrate) uses consistent label+input layout.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.7/jellyfink_1.6.7.0.zip",
+      "checksum": "bb494d434bf58216eb274c8112ca9227",
+      "timestamp": "2026-06-10T21:00:00Z"
+    },
+    {
       "version": "1.6.6.0",
       "changelog": "Fix merged-library scan: use AddMediaPath instead of UpdateLibraryOptions so the in-memory library cache is updated immediately (previously the Jellyfink path was saved to disk but not reflected in the live scan, so items only appeared after a Jellyfin restart). Cleaned up server card layout: all inputs now use proper label/inputContainer structure matching the rest of the config page.",
       "targetAbi": "10.11.0.0",
