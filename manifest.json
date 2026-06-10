@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.6.4.0",
+      "changelog": "Fix delta sync perpetuation: if .strm files are missing on disk despite an existing sync state (e.g., after upgrading from 1.6.2), the state is reset and a full re-sync runs automatically. Fix library scan after sync: replaced ValidateChildren (no-op on CollectionFolder in JF 10.11) with ILibraryMonitor.ReportFileSystemChanged, which is the same mechanism as the built-in file watcher and reliably triggers background indexing of new items.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.4/jellyfink_1.6.4.0.zip",
+      "checksum": "1deeaf316f3f462ee6bc15ff70375891",
+      "timestamp": "2026-06-10T18:30:00Z"
+    },
+    {
       "version": "1.6.3.0",
       "changelog": "Fix movie pruning for merged libraries: edition-tag suffix in filenames no longer causes all movies to be deleted on every sync; improved library scan after sync (PathInfos fallback + INFO-level logging so scan progress is visible in the log).",
       "targetAbi": "10.11.0.0",
