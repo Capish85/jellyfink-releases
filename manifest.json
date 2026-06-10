@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.6.5.0",
+      "changelog": "Simplified config page: removed the logo header and accordion sections, plain section headings and flat layout.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.5/jellyfink_1.6.5.0.zip",
+      "checksum": "6381171fdd55f73fbd85070123d2fd60",
+      "timestamp": "2026-06-10T19:00:00Z"
+    },
+    {
       "version": "1.6.4.0",
       "changelog": "Fix delta sync perpetuation: if .strm files are missing on disk despite an existing sync state (e.g., after upgrading from 1.6.2), the state is reset and a full re-sync runs automatically. Fix library scan after sync: replaced ValidateChildren (no-op on CollectionFolder in JF 10.11) with ILibraryMonitor.ReportFileSystemChanged, which is the same mechanism as the built-in file watcher and reliably triggers background indexing of new items.",
       "targetAbi": "10.11.0.0",
