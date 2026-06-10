@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.6.8.0",
+      "changelog": "Fix library scan for merged libraries: ReportFileSystemChanged was called with the Jellyfink C:\\ path, but for merged libraries the CollectionFolder's primary path is the original location (e.g. E:\\movies). JF traverses up from C:\\ and never finds the library item, silently dropping the notification. Now resolves the CollectionFolder first and notifies via its registered path, so JF scans all physical locations including the Jellyfink one.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.8/jellyfink_1.6.8.0.zip",
+      "checksum": "67b9480ef3ece32144dfe64319f329f6",
+      "timestamp": "2026-06-10T22:00:00Z"
+    },
+    {
       "version": "1.6.7.0",
       "changelog": "Fix config page: merge-with and watch-state dropdowns now use explicit dark-theme styling instead of browser-default white background. Per-server options row (watch state, max items, max bitrate) uses consistent label+input layout.",
       "targetAbi": "10.11.0.0",
