@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.4.1.0",
+      "changelog": "1.4.1 — bug-fix release. Delta sync now uses a clock-skew safety buffer and applies content filters when pruning; one bad item/library no longer aborts the rest of a sync; credential encryption no longer has a save-time race; hardened path handling (no stack overflow on huge names, filename length caps); rate-limit/throttle maps evict stale entries instead of resetting; assorted token/asset/live-sync robustness fixes.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.1.0/jellyfink_1.4.1.0.zip",
+      "checksum": "05118efd3ef9b86acfc181d078afcf1f",
+      "timestamp": "2026-06-10T06:07:47Z"
+    },
+    {
       "version": "1.4.0.0",
       "changelog": "1.4.0 — Optionally mirror the remote's playlists locally (Advanced -> Mirror remote playlists), built from imported items and owned by the mapped/first local user.",
       "targetAbi": "10.11.0.0",
