@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.11.0.0",
+      "changelog": "Fix TV show version merging in merged libraries: series folders in merged libraries now use a clean name (no [seriesId] suffix) so Jellyfin can deduplicate them against the local series by TMDB/TVDB provider ID. Existing [seriesId] folders are automatically renamed on the first sync after updating. Also fixes exception handling in stale-file migration (now catches UnauthorizedAccessException on Windows) and removes inline Regex compilation in pruning code.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.11.0/jellyfink_1.11.0.0.zip",
+      "checksum": "4b1144039f9f40e0b959afbe31716d33",
+      "timestamp": "2026-06-10T23:30:00Z"
+    },
+    {
       "version": "1.10.0.0",
       "changelog": "Fix duplicates when merging with a local library: remove the {edition-Remote} tag from .strm filenames. Jellyfin interprets edition tags as separate library entries (two posters). Without the tag, Jellyfin matches by provider ID (TMDB/IMDB from the .nfo) and merges local and remote versions of the same title into a single item — one poster, one 'Play Version' picker on play. Existing edition-tagged files are automatically cleaned up on the first sync after updating.",
       "targetAbi": "10.11.0.0",
