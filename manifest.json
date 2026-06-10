@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.13.0.0",
+      "changelog": "Config page redesign: material icons on all tabs (Servers/Library/Appearance/Watch state/Advanced), fieldset+legend section grouping matching Jellyfin's native admin style, styled sync status banner with running/idle states, server health shown as a colored pill (green online / red offline).",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.13.0/jellyfink_1.13.0.0.zip",
+      "checksum": "e2a1a58b2b9521851ed489e5eb8715de",
+      "timestamp": "2026-06-10T00:00:00Z"
+    },
+    {
       "version": "1.12.0.0",
       "changelog": "Merged movie libraries: after each sync, automatically link .strm items with their local counterparts as alternate versions using Jellyfin's native version-merge API (SetPrimaryVersionId + LinkedAlternateVersions). Items with the same TMDB ID in a merged library are grouped; the local file becomes the primary and the .strm becomes the alternate, so JF shows one poster with a 'Play Version' picker. Items indexed from the current sync are linked on the next sync once JF's background scan has indexed them.",
       "targetAbi": "10.11.0.0",
