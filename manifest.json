@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.9.0.0",
+      "changelog": "Fix stream 401: cache the HMAC signing secret for the process lifetime so JF's internal config-reload mechanism (which bypasses DecryptConfig) cannot corrupt the in-memory key. Previously, base.SaveConfiguration() could replace the in-memory Configuration with an encrypted clone, causing GetOrCreateSecret to decode ciphertext as key bytes — producing a different HMAC from what signed the .strm tokens, giving 401 on every play attempt after a sync. Now the secret is loaded once on first use and held in a static cache; even if the Configuration object is replaced, the same key is used throughout the JF session. Also adds encrypted-form detection as a fallback and more diagnostic logging in the stream endpoint.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.9.0/jellyfink_1.9.0.0.zip",
+      "checksum": "1ab8bc399baf0e1b64aa2ab62970703b",
+      "timestamp": "2026-06-10T23:00:00Z"
+    },
+    {
       "version": "1.8.0.0",
       "changelog": "Fix merged-library path registration: guard on live CollectionFolder.PhysicalLocations (target.Locations) instead of the LibraryManager options cache (PathInfos). The cache could show C:\\ as already registered from a prior sync while PhysicalLocations had never been updated, causing AddMediaPath to be skipped silently forever. Now detects the stale state (path in XML but absent from live locations), removes the stale entry, and re-registers via AddMediaPath so both XML and in-memory state are correct. Also adds INFO-level logging of live library paths on every sync so registration state is always visible.",
       "targetAbi": "10.11.0.0",
