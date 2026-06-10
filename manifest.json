@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.6.2.0",
+      "changelog": "Fix library scan (ValidateChildren instead of ValidateMediaLibrary which returns immediately in JF 10.11); redesigned config page with centered header, underline tabs, and collapsible accordion sections.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.2/jellyfink_1.6.2.0.zip",
+      "checksum": "26bc686814bd695f743ef6ea696b02d8",
+      "timestamp": "2026-06-10T17:00:00Z"
+    },
+    {
       "version": "1.6.1.0",
       "changelog": "Fix merged-library path being re-added on every resync; fix config page checkbox rendering.",
       "targetAbi": "10.11.0.0",
