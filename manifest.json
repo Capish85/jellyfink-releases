@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.14.0.0",
+      "changelog": "Extend version merging to TV shows and anime in merged libraries. After each sync, episodes from the remote .strm series are linked to their local counterparts as alternate versions using the same mechanism as movies: grouped by (series TMDB ID, season number, episode number), then linked via SetPrimaryVersionId + LinkedAlternateVersions. Works for both regular TV and anime.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.14.0/jellyfink_1.14.0.0.zip",
+      "checksum": "a20a576c69b12636694af350d91ff8f1",
+      "timestamp": "2026-06-10T00:00:00Z"
+    },
+    {
       "version": "1.13.0.0",
       "changelog": "Config page redesign: material icons on all tabs (Servers/Library/Appearance/Watch state/Advanced), fieldset+legend section grouping matching Jellyfin's native admin style, styled sync status banner with running/idle states, server health shown as a colored pill (green online / red offline).",
       "targetAbi": "10.11.0.0",
