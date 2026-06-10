@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.7.0.0",
+      "changelog": "Fix library scan: replace ReportFileSystemChanged (only refreshes metadata of existing items, cannot discover new .strm files) with ITaskManager.Execute on the built-in Scan Media Library task, which reads PathInfos directly and correctly indexes new items. Fix config page: dropdown curtain now has dark background via explicit background-color on select and option elements.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.7.0/jellyfink_1.7.0.0.zip",
+      "checksum": "d40a944d12f3f472b4bf60ea8ed58e96",
+      "timestamp": "2026-06-10T23:30:00Z"
+    },
+    {
       "version": "1.6.9.0",
       "changelog": "Fix config page: dropdown open-state (curtain) now uses dark background via color-scheme:dark; Remove button now styled with raised+button-delete (was rendering white).",
       "targetAbi": "10.11.0.0",
