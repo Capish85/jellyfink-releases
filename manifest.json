@@ -9,6 +9,14 @@
     "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
     "versions": [
       {
+        "version": "1.4.3.0",
+        "changelog": "1.4.3 — fix subtitle sidecar cleanup (bracket in item id broke file pattern matching); badge now re-applies on every sync instead of once, so it survives Jellyfin collage regeneration",
+        "targetAbi": "10.10.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.3.0/jellyfink_1.4.3.0.zip",
+        "checksum": "9e110c77a9c2043c3d29973599b96ea5",
+        "timestamp": "2026-06-10T11:30:00Z"
+      },
+      {
         "version": "1.4.2.0",
         "changelog": "1.4.2 — subtitle sidecar cleanup on disable, badge auto-recovery after JF collage regeneration, library scan always runs after sync",
         "targetAbi": "10.10.0.0",
