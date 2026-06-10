@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.2.0.0",
+      "changelog": "1.2.0 — Delta sync for movie libraries (opt-in, in Advanced): after the first sync, only movies that changed on the remote are re-fetched and rebuilt, so repeat syncs are much faster on large libraries. Deletions and watch state are still handled correctly via a lightweight full scan. TV always does a full pass.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.2.0.0/jellyfink_1.2.0.0.zip",
+      "checksum": "840ad6c82ea98b7f231ab1b772e2d3ed",
+      "timestamp": "2026-06-10T05:09:29Z"
+    },
+    {
       "version": "1.1.0.0",
       "changelog": "1.1.0 — faster TV sync (parallel), subtitle downloads no longer retry slow/failing tracks every sync (one-time attempt with a longer timeout), live sync activity + an in-app log viewer and configurable log retention, opt-in success notifications, config validation before save, and select-all in the library picker. Quality: clean build (warnings-as-errors), more tests, CI.",
       "targetAbi": "10.11.0.0",
