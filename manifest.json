@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.6.3.0",
+      "changelog": "Fix movie pruning for merged libraries: edition-tag suffix in filenames no longer causes all movies to be deleted on every sync; improved library scan after sync (PathInfos fallback + INFO-level logging so scan progress is visible in the log).",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.3/jellyfink_1.6.3.0.zip",
+      "checksum": "8d675f0a491a5bdf74f3568266bacfe9",
+      "timestamp": "2026-06-10T18:00:00Z"
+    },
+    {
       "version": "1.6.2.0",
       "changelog": "Fix library scan (ValidateChildren instead of ValidateMediaLibrary which returns immediately in JF 10.11); redesigned config page with centered header, underline tabs, and collapsible accordion sections.",
       "targetAbi": "10.11.0.0",
