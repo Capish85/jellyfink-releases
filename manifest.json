@@ -11,7 +11,7 @@
       "version": "1.6.0.0",
       "changelog": "Remove subtitle download, increase API timeout to 300s, redesigned config page.",
       "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/Jellyfink/releases/download/v1.6.0/jellyfink_1.6.0.0.zip",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.0.0/jellyfink_1.6.0.0.zip",
       "checksum": "8c40918bb12e3ed6e6a4a1febf39682b",
       "timestamp": "2026-06-10T15:59:28Z"
     },
