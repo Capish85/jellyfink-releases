@@ -36,7 +36,8 @@ Jellyfink writes lightweight `.strm` files (stream links) and `.nfo` metadata fi
 - **Scheduled sync** — runs on a configurable interval (default 12 hours).
 - **Delta sync** — after the first full sync, only re-processes movies or TV series that changed since the last run. Dramatically faster on large libraries.
 - **Live sync** — optionally triggers a sync shortly after the remote reports a library change (WebSocket).
-- **Targeted library scan** — after writing changes, only the affected Jellyfink folders are re-indexed, not your entire server.
+- **Targeted library scan** — after writing changes, only the affected Jellyfink folders are re-indexed, not your entire server. If nothing changed, the scan is skipped entirely.
+- **Echo guard (bidirectional-safe)** — if two servers add each other as remotes, content one server imported from the other is detected and skipped instead of being re-imported and daisy-chained. Requires admin-level remote credentials (Jellyfin hides file paths from regular users).
 - **Quiet hours** — suppress scheduled syncs during a configured time window.
 
 ### Watch state and metadata
@@ -106,7 +107,7 @@ Download the latest `.zip` from [Releases](https://github.com/Capish85/jellyfink
 
 ## Notes
 
-- Prefer an **API key** or a dedicated low-privilege remote account over your main admin password.
+- Prefer an **API key** over entering your main admin password. Note: the echo guard for two-way setups needs admin-level credentials — with a low-privilege account it stays inactive (everything else still works).
 - Watch state is recorded on the remote against the account configured for that server.
 - **Manage library metadata settings** is recommended — it prevents Jellyfin from overwriting the metadata Jellyfink wrote with internet lookups.
 - When new content is added on the remote, Jellyfink scans only its own folders during the next sync — not your entire local library.
