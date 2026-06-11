@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.20.6",
+      "changelog": "Atomic image writes with corrupt-image repair, real scan progress (80-90%), and a .strm echo guard: servers that add each other as remotes no longer re-import their own content (requires admin-level remote credentials); previously imported echoes are pruned automatically.",
+      "targetAbi": "10.10.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.6/jellyfink_1.20.6.zip",
+      "checksum": "15eef4fb2a48fa754e0f73f0b8e64b8b",
+      "timestamp": "2026-06-11T20:22:02Z"
+    },
+    {
       "version": "1.20.4",
       "changelog": "",
       "targetAbi": "10.10.0.0",
