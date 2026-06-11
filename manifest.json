@@ -8,6 +8,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.15.0.0",
+      "changelog": "Code quality and correctness round: (1) GetLocalLibraries now filters out Jellyfink-managed libraries from the merge-target dropdown so you can't accidentally select one. (2) SyncCollections diffs current vs expected members — stale items are now removed, not just accumulated. (3) ResolveCache in PlaybackReporter evicts only deleted .strm entries instead of wiping everything at 8192 items. (4) ProxyAsync uses a 256 KB copy buffer for better video throughput. (5) TMDB is now always written as the default <uniqueid> in NFOs so Jellyfin's scanner matches items reliably. (6) People in NFOs built in a single pass (directors, writers, then actors). (7) Authorization header now reports the real plugin version instead of hardcoded 0.1.0. (8) MergeLibraryMoviesAsync / MergeLibraryEpisodesAsync share a common LinkVersionGroupAsync helper.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.15.0/jellyfink_1.15.0.0.zip",
+      "checksum": "3d22b793154b3b3e2dd5d5c3f97e290c",
+      "timestamp": "2026-06-11T00:00:00Z"
+    },
+    {
       "version": "1.14.0.0",
       "changelog": "Extend version merging to TV shows and anime in merged libraries. After each sync, episodes from the remote .strm series are linked to their local counterparts as alternate versions using the same mechanism as movies: grouped by (series TMDB ID, season number, episode number), then linked via SetPrimaryVersionId + LinkedAlternateVersions. Works for both regular TV and anime.",
       "targetAbi": "10.11.0.0",
