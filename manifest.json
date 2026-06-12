@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.20.10",
+      "changelog": "Fix duplicate cards when a new copy joins an existing version group: merge now detects partially-linked groups and re-links all members (movies and episodes). Previously a group was skipped if any member was already linked, leaving newcomers as separate cards.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.10/jellyfink_1.20.10.zip",
+      "checksum": "ed03fc91585ac948169953a90b12fe41",
+      "timestamp": "2026-06-12T13:38:58Z"
+    },
+    {
       "version": "1.20.9",
       "changelog": "Code-review hardening: proxied streams no longer cut off after 60s; Test connection validates API keys; favorites no longer spam the remote during playback; delta sync retries failed items instead of skipping them forever; full TV sync protects existing episodes when a series fails; manual sync bypasses quiet hours; duplicate server names blocked; version merge falls back to IMDB/TVDB; health check detects broken credentials; live-sync keepalive; atomic file writes; per-library progress.",
       "targetAbi": "10.11.0.0",
