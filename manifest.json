@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.20.9",
+      "changelog": "Code-review hardening: proxied streams no longer cut off after 60s; Test connection validates API keys; favorites no longer spam the remote during playback; delta sync retries failed items instead of skipping them forever; full TV sync protects existing episodes when a series fails; manual sync bypasses quiet hours; duplicate server names blocked; version merge falls back to IMDB/TVDB; health check detects broken credentials; live-sync keepalive; atomic file writes; per-library progress.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.9/jellyfink_1.20.9.zip",
+      "checksum": "271bb3ba64155d9e9e447aeb65b66cd0",
+      "timestamp": "2026-06-12T06:32:18Z"
+    },
+    {
       "version": "1.20.6",
       "changelog": "Atomic image writes with corrupt-image repair, real scan progress (80-90%), and a .strm echo guard: servers that add each other as remotes no longer re-import their own content (requires admin-level remote credentials); previously imported echoes are pruned automatically.",
       "targetAbi": "10.11.0.0",
