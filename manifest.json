@@ -1,373 +1,381 @@
 [
-{
-  "guid": "a3f1c2d4-5b6e-4f70-8a91-2c3d4e5f6a7b",
-  "name": "Jellyfink",
-  "description": "Connect to remote Jellyfin servers and present their libraries locally without copying media.",
-  "overview": "Remote Jellyfin library sharing - a metadata and playback bridge.",
-  "owner": "capish85",
-  "category": "General",
-  "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
-  "versions": [
-    {
-      "version": "1.20.13.0",
-      "changelog": "Fix sync scheduling: live-sync no longer queues behind a running sync (SyncStatus.Running guard) or within 5 min of completion. SaveConfig always corrects the JF task trigger interval. JF library scans now only fire for structural .strm changes, not NFO/metadata updates.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.13.0/jellyfink_1.20.13.0.zip",
-      "checksum": "0dfc2b8afec09aee616a7f4112ac9792",
-      "timestamp": "2026-06-17T01:35:38Z"
-    },
-    {
-      "version": "1.20.12.0",
-      "changelog": "Performance and allocation improvements: burst log coalescing, allocation-free merge grouping, static cached arrays throughout, O(1) path sanitisation, lock-free SyncStatus, WS URL prefix-swap, direct hex validation loop.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.12.0/jellyfink_1.20.12.0.zip",
-      "checksum": "438379c40eaa6e7eea864fa3e44e3b1a",
-      "timestamp": "2026-06-16T18:09:20Z"
-    },
-    {
-      "version": "1.20.11",
-      "changelog": "",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.11/jellyfink_1.20.11.zip",
-      "checksum": "90a280acb4ea49311625005d166417e2",
-      "timestamp": "2026-06-13T16:57:48Z"
-    },
-    {
-      "version": "1.20.10",
-      "changelog": "Fix duplicate cards when a new copy joins an existing version group: merge now detects partially-linked groups and re-links all members (movies and episodes). Previously a group was skipped if any member was already linked, leaving newcomers as separate cards.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.10/jellyfink_1.20.10.zip",
-      "checksum": "ed03fc91585ac948169953a90b12fe41",
-      "timestamp": "2026-06-12T13:38:58Z"
-    },
-    {
-      "version": "1.20.9",
-      "changelog": "Code-review hardening: proxied streams no longer cut off after 60s; Test connection validates API keys; favorites no longer spam the remote during playback; delta sync retries failed items instead of skipping them forever; full TV sync protects existing episodes when a series fails; manual sync bypasses quiet hours; duplicate server names blocked; version merge falls back to IMDB/TVDB; health check detects broken credentials; live-sync keepalive; atomic file writes; per-library progress.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.9/jellyfink_1.20.9.zip",
-      "checksum": "271bb3ba64155d9e9e447aeb65b66cd0",
-      "timestamp": "2026-06-12T06:32:18Z"
-    },
-    {
-      "version": "1.20.6",
-      "changelog": "Atomic image writes with corrupt-image repair, real scan progress (80-90%), and a .strm echo guard: servers that add each other as remotes no longer re-import their own content (requires admin-level remote credentials); previously imported echoes are pruned automatically.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.6/jellyfink_1.20.6.zip",
-      "checksum": "15eef4fb2a48fa754e0f73f0b8e64b8b",
-      "timestamp": "2026-06-11T20:22:02Z"
-    },
-    {
-      "version": "1.20.4",
-      "changelog": "",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.4/jellyfink_1.20.4.zip",
-      "checksum": "14726ee3f13ee92d464610d0833e8e41",
-      "timestamp": "2026-06-11T15:56:18Z"
-    },
-    {
-      "version": "1.20.3",
-      "changelog": "",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.3/jellyfink_1.20.3.zip",
-      "checksum": "981e0bdcce26eb99f88bdb78f327a381",
-      "timestamp": "2026-06-11T15:52:48Z"
-    },
-    {
-      "version": "1.20.2",
-      "changelog": "",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.2/jellyfink_1.20.2.zip",
-      "checksum": "5f645554aff4318bae550e5224bb1561",
-      "timestamp": "2026-06-11T15:18:59Z"
-    },
-    {
-      "version": "1.20.1",
-      "changelog": "",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.1/jellyfink_1.20.1.zip",
-      "checksum": "455d8d0e89d1fd842c2972f8dfe05ecc",
-      "timestamp": "2026-06-11T14:48:47Z"
-    },
-    {
-      "version": "1.20.0",
-      "changelog": "",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.0/jellyfink_1.20.0.zip",
-      "checksum": "859d3931f3b02cbe95f8f2c7f0897ff6",
-      "timestamp": "2026-06-11T14:08:01Z"
-    },
-    {
-      "version": "1.19.0.0",
-      "changelog": "",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.19.0.0/jellyfink_1.19.0.0.zip",
-      "checksum": "59ff1568a1f3de3ef2236690545d98ea",
-      "timestamp": "2026-06-11T10:39:34Z"
-    },
-    {
-      "version": "1.18.0.0",
-      "changelog": "",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.18.0.0/jellyfink_1.18.0.0.zip",
-      "checksum": "c11948be7095ec93634fe9799d02770a",
-      "timestamp": "2026-06-11T07:59:12Z"
-    },
-    {
-      "version": "1.17.0.0",
-      "changelog": "Fix: plugin install was packaging full dotnet publish output (native SkiaSharp DLLs) causing Malfunctioned status. Now correctly ships single DLL only. Includes round-3 performance and correctness improvements.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.17.0.0/jellyfink_1.17.0.0.zip",
-      "checksum": "4fa7ecb0e6bd8ff267f393ed6448aa9f",
-      "timestamp": "2026-06-11T06:26:24Z"
-    },
-    {
-      "version": "1.16.0.0",
-      "changelog": "Robustness and UX round: (1) WebSocket listener now aborts connections that send >64 KB messages (prevents unbounded memory growth from hostile servers). (2) IsRemoteReachableAsync caches reachability per server for 30 s so Range/seek requests don't each fire a round-trip to the remote. (3) Playlists are now kept in sync — membership is compared on each run and the playlist is rebuilt when it changes, not just created once. (4) Max bitrate field in server config is now labelled Kbps with automatic ×1000 conversion, so you type 20000 instead of 20000000 for 20 Mbps.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.16.0/jellyfink_1.16.0.0.zip",
-      "checksum": "b069994b6d9865d07fc1709ef329e324",
-      "timestamp": "2026-06-11T00:00:00Z"
-    },
-    {
-      "version": "1.15.0.0",
-      "changelog": "Code quality and correctness round: (1) GetLocalLibraries now filters out Jellyfink-managed libraries from the merge-target dropdown so you can't accidentally select one. (2) SyncCollections diffs current vs expected members — stale items are now removed, not just accumulated. (3) ResolveCache in PlaybackReporter evicts only deleted .strm entries instead of wiping everything at 8192 items. (4) ProxyAsync uses a 256 KB copy buffer for better video throughput. (5) TMDB is now always written as the default <uniqueid> in NFOs so Jellyfin's scanner matches items reliably. (6) People in NFOs built in a single pass (directors, writers, then actors). (7) Authorization header now reports the real plugin version instead of hardcoded 0.1.0. (8) MergeLibraryMoviesAsync / MergeLibraryEpisodesAsync share a common LinkVersionGroupAsync helper.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.15.0/jellyfink_1.15.0.0.zip",
-      "checksum": "3d22b793154b3b3e2dd5d5c3f97e290c",
-      "timestamp": "2026-06-11T00:00:00Z"
-    },
-    {
-      "version": "1.14.0.0",
-      "changelog": "Extend version merging to TV shows and anime in merged libraries. After each sync, episodes from the remote .strm series are linked to their local counterparts as alternate versions using the same mechanism as movies: grouped by (series TMDB ID, season number, episode number), then linked via SetPrimaryVersionId + LinkedAlternateVersions. Works for both regular TV and anime.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.14.0/jellyfink_1.14.0.0.zip",
-      "checksum": "a20a576c69b12636694af350d91ff8f1",
-      "timestamp": "2026-06-10T00:00:00Z"
-    },
-    {
-      "version": "1.13.0.0",
-      "changelog": "Config page redesign: material icons on all tabs (Servers/Library/Appearance/Watch state/Advanced), fieldset+legend section grouping matching Jellyfin's native admin style, styled sync status banner with running/idle states, server health shown as a colored pill (green online / red offline).",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.13.0/jellyfink_1.13.0.0.zip",
-      "checksum": "e2a1a58b2b9521851ed489e5eb8715de",
-      "timestamp": "2026-06-10T00:00:00Z"
-    },
-    {
-      "version": "1.12.0.0",
-      "changelog": "Merged movie libraries: after each sync, automatically link .strm items with their local counterparts as alternate versions using Jellyfin's native version-merge API (SetPrimaryVersionId + LinkedAlternateVersions). Items with the same TMDB ID in a merged library are grouped; the local file becomes the primary and the .strm becomes the alternate, so JF shows one poster with a 'Play Version' picker. Items indexed from the current sync are linked on the next sync once JF's background scan has indexed them.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.12.0/jellyfink_1.12.0.0.zip",
-      "checksum": "0994dd345938bf4e233dd6b191a60ec8",
-      "timestamp": "2026-06-10T00:00:00Z"
-    },
-    {
-      "version": "1.11.0.0",
-      "changelog": "Fix TV show version merging in merged libraries: series folders in merged libraries now use a clean name (no [seriesId] suffix) so Jellyfin can deduplicate them against the local series by TMDB/TVDB provider ID. Existing [seriesId] folders are automatically renamed on the first sync after updating. Also fixes exception handling in stale-file migration (now catches UnauthorizedAccessException on Windows) and removes inline Regex compilation in pruning code.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.11.0/jellyfink_1.11.0.0.zip",
-      "checksum": "4b1144039f9f40e0b959afbe31716d33",
-      "timestamp": "2026-06-10T23:30:00Z"
-    },
-    {
-      "version": "1.10.0.0",
-      "changelog": "Fix duplicates when merging with a local library: remove the {edition-Remote} tag from .strm filenames. Jellyfin interprets edition tags as separate library entries (two posters). Without the tag, Jellyfin matches by provider ID (TMDB/IMDB from the .nfo) and merges local and remote versions of the same title into a single item — one poster, one 'Play Version' picker on play. Existing edition-tagged files are automatically cleaned up on the first sync after updating.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.10.0/jellyfink_1.10.0.0.zip",
-      "checksum": "df382afb78d207c8557083aefafdd13a",
-      "timestamp": "2026-06-10T23:00:00Z"
-    },
-    {
-      "version": "1.9.0.0",
-      "changelog": "Fix stream 401: cache the HMAC signing secret for the process lifetime so JF's internal config-reload mechanism (which bypasses DecryptConfig) cannot corrupt the in-memory key. Previously, base.SaveConfiguration() could replace the in-memory Configuration with an encrypted clone, causing GetOrCreateSecret to decode ciphertext as key bytes — producing a different HMAC from what signed the .strm tokens, giving 401 on every play attempt after a sync. Now the secret is loaded once on first use and held in a static cache; even if the Configuration object is replaced, the same key is used throughout the JF session. Also adds encrypted-form detection as a fallback and more diagnostic logging in the stream endpoint.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.9.0/jellyfink_1.9.0.0.zip",
-      "checksum": "1ab8bc399baf0e1b64aa2ab62970703b",
-      "timestamp": "2026-06-10T23:00:00Z"
-    },
-    {
-      "version": "1.8.0.0",
-      "changelog": "Fix merged-library path registration: guard on live CollectionFolder.PhysicalLocations (target.Locations) instead of the LibraryManager options cache (PathInfos). The cache could show C:\\ as already registered from a prior sync while PhysicalLocations had never been updated, causing AddMediaPath to be skipped silently forever. Now detects the stale state (path in XML but absent from live locations), removes the stale entry, and re-registers via AddMediaPath so both XML and in-memory state are correct. Also adds INFO-level logging of live library paths on every sync so registration state is always visible.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.8.0/jellyfink_1.8.0.0.zip",
-      "checksum": "0994739280a16274411e41de3bab6e49",
-      "timestamp": "2026-06-10T23:00:00Z"
-    },
-    {
-      "version": "1.7.0.0",
-      "changelog": "Fix library scan: replace ReportFileSystemChanged (only refreshes metadata of existing items, cannot discover new .strm files) with ITaskManager.Execute on the built-in Scan Media Library task, which reads PathInfos directly and correctly indexes new items. Fix config page: dropdown curtain now has dark background via explicit background-color on select and option elements.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.7.0/jellyfink_1.7.0.0.zip",
-      "checksum": "d40a944d12f3f472b4bf60ea8ed58e96",
-      "timestamp": "2026-06-10T23:30:00Z"
-    },
-    {
-      "version": "1.6.9.0",
-      "changelog": "Fix config page: dropdown open-state (curtain) now uses dark background via color-scheme:dark; Remove button now styled with raised+button-delete (was rendering white).",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.9/jellyfink_1.6.9.0.zip",
-      "checksum": "d036ad59f01e78d717414914048b5172",
-      "timestamp": "2026-06-10T23:00:00Z"
-    },
-    {
-      "version": "1.6.8.0",
-      "changelog": "Fix library scan for merged libraries: ReportFileSystemChanged was called with the Jellyfink C:\\ path, but for merged libraries the CollectionFolder's primary path is the original location (e.g. E:\\movies). JF traverses up from C:\\ and never finds the library item, silently dropping the notification. Now resolves the CollectionFolder first and notifies via its registered path, so JF scans all physical locations including the Jellyfink one.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.8/jellyfink_1.6.8.0.zip",
-      "checksum": "19eecb28dced25a013a29e62f0aecaec",
-      "timestamp": "2026-06-10T22:00:00Z"
-    },
-    {
-      "version": "1.6.7.0",
-      "changelog": "Fix config page: merge-with and watch-state dropdowns now use explicit dark-theme styling instead of browser-default white background. Per-server options row (watch state, max items, max bitrate) uses consistent label+input layout.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.7/jellyfink_1.6.7.0.zip",
-      "checksum": "bb494d434bf58216eb274c8112ca9227",
-      "timestamp": "2026-06-10T21:00:00Z"
-    },
-    {
-      "version": "1.6.6.0",
-      "changelog": "Fix merged-library scan: use AddMediaPath instead of UpdateLibraryOptions so the in-memory library cache is updated immediately (previously the Jellyfink path was saved to disk but not reflected in the live scan, so items only appeared after a Jellyfin restart). Cleaned up server card layout: all inputs now use proper label/inputContainer structure matching the rest of the config page.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.6/jellyfink_1.6.6.0.zip",
-      "checksum": "4f7fe9bc4780cb5dd79a36881c3dbcbf",
-      "timestamp": "2026-06-10T20:00:00Z"
-    },
-    {
-      "version": "1.6.5.0",
-      "changelog": "Simplified config page: removed the logo header and accordion sections, plain section headings and flat layout.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.5/jellyfink_1.6.5.0.zip",
-      "checksum": "6381171fdd55f73fbd85070123d2fd60",
-      "timestamp": "2026-06-10T19:00:00Z"
-    },
-    {
-      "version": "1.6.4.0",
-      "changelog": "Fix delta sync perpetuation: if .strm files are missing on disk despite an existing sync state (e.g., after upgrading from 1.6.2), the state is reset and a full re-sync runs automatically. Fix library scan after sync: replaced ValidateChildren (no-op on CollectionFolder in JF 10.11) with ILibraryMonitor.ReportFileSystemChanged, which is the same mechanism as the built-in file watcher and reliably triggers background indexing of new items.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.4/jellyfink_1.6.4.0.zip",
-      "checksum": "1deeaf316f3f462ee6bc15ff70375891",
-      "timestamp": "2026-06-10T18:30:00Z"
-    },
-    {
-      "version": "1.6.3.0",
-      "changelog": "Fix movie pruning for merged libraries: edition-tag suffix in filenames no longer causes all movies to be deleted on every sync; improved library scan after sync (PathInfos fallback + INFO-level logging so scan progress is visible in the log).",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.3/jellyfink_1.6.3.0.zip",
-      "checksum": "8d675f0a491a5bdf74f3568266bacfe9",
-      "timestamp": "2026-06-10T18:00:00Z"
-    },
-    {
-      "version": "1.6.2.0",
-      "changelog": "Fix library scan (ValidateChildren instead of ValidateMediaLibrary which returns immediately in JF 10.11); redesigned config page with centered header, underline tabs, and collapsible accordion sections.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.2/jellyfink_1.6.2.0.zip",
-      "checksum": "26bc686814bd695f743ef6ea696b02d8",
-      "timestamp": "2026-06-10T17:00:00Z"
-    },
-    {
-      "version": "1.6.1.0",
-      "changelog": "Fix merged-library path being re-added on every resync; fix config page checkbox rendering.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.1.0/jellyfink_1.6.1.0.zip",
-      "checksum": "769ccf1e033ba9bc43c4a501bdea5b7e",
-      "timestamp": "2026-06-10T16:19:15Z"
-    },
-    {
-      "version": "1.6.0.0",
-      "changelog": "Remove subtitle download, increase API timeout to 300s, redesigned config page.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.0.0/jellyfink_1.6.0.0.zip",
-      "checksum": "8c40918bb12e3ed6e6a4a1febf39682b",
-      "timestamp": "2026-06-10T15:59:28Z"
-    },
-    {
-      "version": "1.5.1.0",
-      "changelog": "1.5.1 — improved config page: every setting now explains what it does and whether to enable it",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.5.1.0/jellyfink_1.5.1.0.zip",
-      "checksum": "fbeabbeaa6494fd3af295d0fd5ff6fec",
-      "timestamp": "2026-06-10T13:38:40Z"
-    },
-    {
-      "version": "1.5.0.0",
-      "changelog": "1.5.0 — merge remote libraries into existing local ones: pick a local library from the dropdown and Jellyfink adds its folder as an extra path; Jellyfin version-groups matching items with a 'Remote · <server>' label in the picker",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.5.0.0/jellyfink_1.5.0.0.zip",
-      "checksum": "692610fad46445b640be2415bfcec54d",
-      "timestamp": "2026-06-10T12:43:52Z"
-    },
-    {
-      "version": "1.4.4.0",
-      "changelog": "1.4.4 — subtitle download timeout raised from 45s to 120s (configurable in Subtitles tab) to fix timeouts on slow remote servers; fixed file-pruning bracket-pattern bug where items with [id] in filename left orphaned .nfo/.jpg sidecars",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.4.0/jellyfink_1.4.4.0.zip",
-      "checksum": "ad4dd845755d24c76859d40ee8102f28",
-      "timestamp": "2026-06-10T11:29:30Z"
-    },
-    {
-      "version": "1.4.3.0",
-      "changelog": "1.4.3 — fix subtitle sidecar cleanup (bracket in item id broke file pattern matching); badge now re-applies on every sync instead of once, so it survives Jellyfin collage regeneration",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.3.0/jellyfink_1.4.3.0.zip",
-      "checksum": "9e110c77a9c2043c3d29973599b96ea5",
-      "timestamp": "2026-06-10T11:30:00Z"
-    },
-    {
-      "version": "1.4.2.0",
-      "changelog": "1.4.2 — subtitle sidecar cleanup on disable, badge auto-recovery after JF collage regeneration, library scan always runs after sync",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.2.0/jellyfink_1.4.2.0.zip",
-      "checksum": "f034ac83d76f316895d5e38e0020ed65",
-      "timestamp": "2026-06-10T10:55:00Z"
-    },
-    {
-      "version": "1.4.1.0",
-      "changelog": "1.4.1 — bug-fix release. Delta sync now uses a clock-skew safety buffer and applies content filters when pruning; one bad item/library no longer aborts the rest of a sync; credential encryption no longer has a save-time race; hardened path handling (no stack overflow on huge names, filename length caps); rate-limit/throttle maps evict stale entries instead of resetting; assorted token/asset/live-sync robustness fixes.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.1.0/jellyfink_1.4.1.0.zip",
-      "checksum": "05118efd3ef9b86acfc181d078afcf1f",
-      "timestamp": "2026-06-10T06:07:47Z"
-    },
-    {
-      "version": "1.4.0.0",
-      "changelog": "1.4.0 — Optionally mirror the remote's playlists locally (Advanced -> Mirror remote playlists), built from imported items and owned by the mapped/first local user.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.0.0/jellyfink_1.4.0.0.zip",
-      "checksum": "aab700f01b810720d5d7182194716704",
-      "timestamp": "2026-06-10T05:25:00Z"
-    },
-    {
-      "version": "1.3.0.0",
-      "changelog": "1.3.0 — Security: remote credentials (passwords, API keys, tokens) and the stream-signing secret are now encrypted at rest in the plugin config, with the key stored separately. Existing configs are upgraded automatically on the next save; no action needed.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.3.0.0/jellyfink_1.3.0.0.zip",
-      "checksum": "85f1bcb8bd4cbb33ab7d9530dcfbe4e3",
-      "timestamp": "2026-06-10T05:14:49Z"
-    },
-    {
-      "version": "1.2.0.0",
-      "changelog": "1.2.0 — Delta sync for movie libraries (opt-in, in Advanced): after the first sync, only movies that changed on the remote are re-fetched and rebuilt, so repeat syncs are much faster on large libraries. Deletions and watch state are still handled correctly via a lightweight full scan. TV always does a full pass.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.2.0.0/jellyfink_1.2.0.0.zip",
-      "checksum": "840ad6c82ea98b7f231ab1b772e2d3ed",
-      "timestamp": "2026-06-10T05:09:29Z"
-    },
-    {
-      "version": "1.1.0.0",
-      "changelog": "1.1.0 — faster TV sync (parallel), subtitle downloads no longer retry slow/failing tracks every sync (one-time attempt with a longer timeout), live sync activity + an in-app log viewer and configurable log retention, opt-in success notifications, config validation before save, and select-all in the library picker. Quality: clean build (warnings-as-errors), more tests, CI.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.1.0.0/jellyfink_1.1.0.0.zip",
-      "checksum": "5a8ac57424abeb502ca810ae13320c11",
-      "timestamp": "2026-06-09T22:26:57Z"
-    },
-    {
-      "version": "1.0.0.0",
-      "changelog": "Jellyfink 1.0 — share remote Jellyfin libraries locally (no media copied). Movies & TV, secure Proxy streaming, remote metadata, two-way watch state & favorites, subtitle sidecars, REMOTE library badge, tabbed config page, and a dedicated jellyfink.log. Requires Jellyfin 10.11+.",
-      "targetAbi": "10.11.0.0",
-      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.0.0.0/jellyfink_1.0.0.0.zip",
-      "checksum": "d9a5c7cd4600857628eccdaa1c2be4f7",
-      "timestamp": "2026-06-09T21:59:33Z"
-    }
-  ]
-}
+  {
+    "guid": "a3f1c2d4-5b6e-4f70-8a91-2c3d4e5f6a7b",
+    "name": "Jellyfink",
+    "description": "Connect to remote Jellyfin servers and present their libraries locally without copying media.",
+    "overview": "Remote Jellyfin library sharing - a metadata and playback bridge.",
+    "owner": "capish85",
+    "category": "General",
+    "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
+    "versions": [
+      {
+        "version": "1.20.14.0",
+        "changelog": "Release 1.20.14.0",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.14.0/jellyfink_1.20.14.0.zip",
+        "checksum": "ace7ade4b932e09a67c9a8cfc0a1e712",
+        "timestamp": "2026-06-17T12:16:43Z"
+      },
+      {
+        "version": "1.20.13.0",
+        "changelog": "Fix sync scheduling: live-sync no longer queues behind a running sync (SyncStatus.Running guard) or within 5 min of completion. SaveConfig always corrects the JF task trigger interval. JF library scans now only fire for structural .strm changes, not NFO/metadata updates.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.13.0/jellyfink_1.20.13.0.zip",
+        "checksum": "0dfc2b8afec09aee616a7f4112ac9792",
+        "timestamp": "2026-06-17T01:35:38Z"
+      },
+      {
+        "version": "1.20.12.0",
+        "changelog": "Performance and allocation improvements: burst log coalescing, allocation-free merge grouping, static cached arrays throughout, O(1) path sanitisation, lock-free SyncStatus, WS URL prefix-swap, direct hex validation loop.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.12.0/jellyfink_1.20.12.0.zip",
+        "checksum": "438379c40eaa6e7eea864fa3e44e3b1a",
+        "timestamp": "2026-06-16T18:09:20Z"
+      },
+      {
+        "version": "1.20.11",
+        "changelog": "",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.11/jellyfink_1.20.11.zip",
+        "checksum": "90a280acb4ea49311625005d166417e2",
+        "timestamp": "2026-06-13T16:57:48Z"
+      },
+      {
+        "version": "1.20.10",
+        "changelog": "Fix duplicate cards when a new copy joins an existing version group: merge now detects partially-linked groups and re-links all members (movies and episodes). Previously a group was skipped if any member was already linked, leaving newcomers as separate cards.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.10/jellyfink_1.20.10.zip",
+        "checksum": "ed03fc91585ac948169953a90b12fe41",
+        "timestamp": "2026-06-12T13:38:58Z"
+      },
+      {
+        "version": "1.20.9",
+        "changelog": "Code-review hardening: proxied streams no longer cut off after 60s; Test connection validates API keys; favorites no longer spam the remote during playback; delta sync retries failed items instead of skipping them forever; full TV sync protects existing episodes when a series fails; manual sync bypasses quiet hours; duplicate server names blocked; version merge falls back to IMDB/TVDB; health check detects broken credentials; live-sync keepalive; atomic file writes; per-library progress.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.9/jellyfink_1.20.9.zip",
+        "checksum": "271bb3ba64155d9e9e447aeb65b66cd0",
+        "timestamp": "2026-06-12T06:32:18Z"
+      },
+      {
+        "version": "1.20.6",
+        "changelog": "Atomic image writes with corrupt-image repair, real scan progress (80-90%), and a .strm echo guard: servers that add each other as remotes no longer re-import their own content (requires admin-level remote credentials); previously imported echoes are pruned automatically.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.6/jellyfink_1.20.6.zip",
+        "checksum": "15eef4fb2a48fa754e0f73f0b8e64b8b",
+        "timestamp": "2026-06-11T20:22:02Z"
+      },
+      {
+        "version": "1.20.4",
+        "changelog": "",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.4/jellyfink_1.20.4.zip",
+        "checksum": "14726ee3f13ee92d464610d0833e8e41",
+        "timestamp": "2026-06-11T15:56:18Z"
+      },
+      {
+        "version": "1.20.3",
+        "changelog": "",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.3/jellyfink_1.20.3.zip",
+        "checksum": "981e0bdcce26eb99f88bdb78f327a381",
+        "timestamp": "2026-06-11T15:52:48Z"
+      },
+      {
+        "version": "1.20.2",
+        "changelog": "",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.2/jellyfink_1.20.2.zip",
+        "checksum": "5f645554aff4318bae550e5224bb1561",
+        "timestamp": "2026-06-11T15:18:59Z"
+      },
+      {
+        "version": "1.20.1",
+        "changelog": "",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.1/jellyfink_1.20.1.zip",
+        "checksum": "455d8d0e89d1fd842c2972f8dfe05ecc",
+        "timestamp": "2026-06-11T14:48:47Z"
+      },
+      {
+        "version": "1.20.0",
+        "changelog": "",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.0/jellyfink_1.20.0.zip",
+        "checksum": "859d3931f3b02cbe95f8f2c7f0897ff6",
+        "timestamp": "2026-06-11T14:08:01Z"
+      },
+      {
+        "version": "1.19.0.0",
+        "changelog": "",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.19.0.0/jellyfink_1.19.0.0.zip",
+        "checksum": "59ff1568a1f3de3ef2236690545d98ea",
+        "timestamp": "2026-06-11T10:39:34Z"
+      },
+      {
+        "version": "1.18.0.0",
+        "changelog": "",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.18.0.0/jellyfink_1.18.0.0.zip",
+        "checksum": "c11948be7095ec93634fe9799d02770a",
+        "timestamp": "2026-06-11T07:59:12Z"
+      },
+      {
+        "version": "1.17.0.0",
+        "changelog": "Fix: plugin install was packaging full dotnet publish output (native SkiaSharp DLLs) causing Malfunctioned status. Now correctly ships single DLL only. Includes round-3 performance and correctness improvements.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.17.0.0/jellyfink_1.17.0.0.zip",
+        "checksum": "4fa7ecb0e6bd8ff267f393ed6448aa9f",
+        "timestamp": "2026-06-11T06:26:24Z"
+      },
+      {
+        "version": "1.16.0.0",
+        "changelog": "Robustness and UX round: (1) WebSocket listener now aborts connections that send >64 KB messages (prevents unbounded memory growth from hostile servers). (2) IsRemoteReachableAsync caches reachability per server for 30 s so Range/seek requests don't each fire a round-trip to the remote. (3) Playlists are now kept in sync — membership is compared on each run and the playlist is rebuilt when it changes, not just created once. (4) Max bitrate field in server config is now labelled Kbps with automatic ×1000 conversion, so you type 20000 instead of 20000000 for 20 Mbps.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.16.0/jellyfink_1.16.0.0.zip",
+        "checksum": "b069994b6d9865d07fc1709ef329e324",
+        "timestamp": "2026-06-11T00:00:00Z"
+      },
+      {
+        "version": "1.15.0.0",
+        "changelog": "Code quality and correctness round: (1) GetLocalLibraries now filters out Jellyfink-managed libraries from the merge-target dropdown so you can't accidentally select one. (2) SyncCollections diffs current vs expected members — stale items are now removed, not just accumulated. (3) ResolveCache in PlaybackReporter evicts only deleted .strm entries instead of wiping everything at 8192 items. (4) ProxyAsync uses a 256 KB copy buffer for better video throughput. (5) TMDB is now always written as the default <uniqueid> in NFOs so Jellyfin's scanner matches items reliably. (6) People in NFOs built in a single pass (directors, writers, then actors). (7) Authorization header now reports the real plugin version instead of hardcoded 0.1.0. (8) MergeLibraryMoviesAsync / MergeLibraryEpisodesAsync share a common LinkVersionGroupAsync helper.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.15.0/jellyfink_1.15.0.0.zip",
+        "checksum": "3d22b793154b3b3e2dd5d5c3f97e290c",
+        "timestamp": "2026-06-11T00:00:00Z"
+      },
+      {
+        "version": "1.14.0.0",
+        "changelog": "Extend version merging to TV shows and anime in merged libraries. After each sync, episodes from the remote .strm series are linked to their local counterparts as alternate versions using the same mechanism as movies: grouped by (series TMDB ID, season number, episode number), then linked via SetPrimaryVersionId + LinkedAlternateVersions. Works for both regular TV and anime.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.14.0/jellyfink_1.14.0.0.zip",
+        "checksum": "a20a576c69b12636694af350d91ff8f1",
+        "timestamp": "2026-06-10T00:00:00Z"
+      },
+      {
+        "version": "1.13.0.0",
+        "changelog": "Config page redesign: material icons on all tabs (Servers/Library/Appearance/Watch state/Advanced), fieldset+legend section grouping matching Jellyfin's native admin style, styled sync status banner with running/idle states, server health shown as a colored pill (green online / red offline).",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.13.0/jellyfink_1.13.0.0.zip",
+        "checksum": "e2a1a58b2b9521851ed489e5eb8715de",
+        "timestamp": "2026-06-10T00:00:00Z"
+      },
+      {
+        "version": "1.12.0.0",
+        "changelog": "Merged movie libraries: after each sync, automatically link .strm items with their local counterparts as alternate versions using Jellyfin's native version-merge API (SetPrimaryVersionId + LinkedAlternateVersions). Items with the same TMDB ID in a merged library are grouped; the local file becomes the primary and the .strm becomes the alternate, so JF shows one poster with a 'Play Version' picker. Items indexed from the current sync are linked on the next sync once JF's background scan has indexed them.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.12.0/jellyfink_1.12.0.0.zip",
+        "checksum": "0994dd345938bf4e233dd6b191a60ec8",
+        "timestamp": "2026-06-10T00:00:00Z"
+      },
+      {
+        "version": "1.11.0.0",
+        "changelog": "Fix TV show version merging in merged libraries: series folders in merged libraries now use a clean name (no [seriesId] suffix) so Jellyfin can deduplicate them against the local series by TMDB/TVDB provider ID. Existing [seriesId] folders are automatically renamed on the first sync after updating. Also fixes exception handling in stale-file migration (now catches UnauthorizedAccessException on Windows) and removes inline Regex compilation in pruning code.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.11.0/jellyfink_1.11.0.0.zip",
+        "checksum": "4b1144039f9f40e0b959afbe31716d33",
+        "timestamp": "2026-06-10T23:30:00Z"
+      },
+      {
+        "version": "1.10.0.0",
+        "changelog": "Fix duplicates when merging with a local library: remove the {edition-Remote} tag from .strm filenames. Jellyfin interprets edition tags as separate library entries (two posters). Without the tag, Jellyfin matches by provider ID (TMDB/IMDB from the .nfo) and merges local and remote versions of the same title into a single item — one poster, one 'Play Version' picker on play. Existing edition-tagged files are automatically cleaned up on the first sync after updating.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.10.0/jellyfink_1.10.0.0.zip",
+        "checksum": "df382afb78d207c8557083aefafdd13a",
+        "timestamp": "2026-06-10T23:00:00Z"
+      },
+      {
+        "version": "1.9.0.0",
+        "changelog": "Fix stream 401: cache the HMAC signing secret for the process lifetime so JF's internal config-reload mechanism (which bypasses DecryptConfig) cannot corrupt the in-memory key. Previously, base.SaveConfiguration() could replace the in-memory Configuration with an encrypted clone, causing GetOrCreateSecret to decode ciphertext as key bytes — producing a different HMAC from what signed the .strm tokens, giving 401 on every play attempt after a sync. Now the secret is loaded once on first use and held in a static cache; even if the Configuration object is replaced, the same key is used throughout the JF session. Also adds encrypted-form detection as a fallback and more diagnostic logging in the stream endpoint.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.9.0/jellyfink_1.9.0.0.zip",
+        "checksum": "1ab8bc399baf0e1b64aa2ab62970703b",
+        "timestamp": "2026-06-10T23:00:00Z"
+      },
+      {
+        "version": "1.8.0.0",
+        "changelog": "Fix merged-library path registration: guard on live CollectionFolder.PhysicalLocations (target.Locations) instead of the LibraryManager options cache (PathInfos). The cache could show C:\\ as already registered from a prior sync while PhysicalLocations had never been updated, causing AddMediaPath to be skipped silently forever. Now detects the stale state (path in XML but absent from live locations), removes the stale entry, and re-registers via AddMediaPath so both XML and in-memory state are correct. Also adds INFO-level logging of live library paths on every sync so registration state is always visible.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.8.0/jellyfink_1.8.0.0.zip",
+        "checksum": "0994739280a16274411e41de3bab6e49",
+        "timestamp": "2026-06-10T23:00:00Z"
+      },
+      {
+        "version": "1.7.0.0",
+        "changelog": "Fix library scan: replace ReportFileSystemChanged (only refreshes metadata of existing items, cannot discover new .strm files) with ITaskManager.Execute on the built-in Scan Media Library task, which reads PathInfos directly and correctly indexes new items. Fix config page: dropdown curtain now has dark background via explicit background-color on select and option elements.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.7.0/jellyfink_1.7.0.0.zip",
+        "checksum": "d40a944d12f3f472b4bf60ea8ed58e96",
+        "timestamp": "2026-06-10T23:30:00Z"
+      },
+      {
+        "version": "1.6.9.0",
+        "changelog": "Fix config page: dropdown open-state (curtain) now uses dark background via color-scheme:dark; Remove button now styled with raised+button-delete (was rendering white).",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.9/jellyfink_1.6.9.0.zip",
+        "checksum": "d036ad59f01e78d717414914048b5172",
+        "timestamp": "2026-06-10T23:00:00Z"
+      },
+      {
+        "version": "1.6.8.0",
+        "changelog": "Fix library scan for merged libraries: ReportFileSystemChanged was called with the Jellyfink C:\\ path, but for merged libraries the CollectionFolder's primary path is the original location (e.g. E:\\movies). JF traverses up from C:\\ and never finds the library item, silently dropping the notification. Now resolves the CollectionFolder first and notifies via its registered path, so JF scans all physical locations including the Jellyfink one.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.8/jellyfink_1.6.8.0.zip",
+        "checksum": "19eecb28dced25a013a29e62f0aecaec",
+        "timestamp": "2026-06-10T22:00:00Z"
+      },
+      {
+        "version": "1.6.7.0",
+        "changelog": "Fix config page: merge-with and watch-state dropdowns now use explicit dark-theme styling instead of browser-default white background. Per-server options row (watch state, max items, max bitrate) uses consistent label+input layout.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.7/jellyfink_1.6.7.0.zip",
+        "checksum": "bb494d434bf58216eb274c8112ca9227",
+        "timestamp": "2026-06-10T21:00:00Z"
+      },
+      {
+        "version": "1.6.6.0",
+        "changelog": "Fix merged-library scan: use AddMediaPath instead of UpdateLibraryOptions so the in-memory library cache is updated immediately (previously the Jellyfink path was saved to disk but not reflected in the live scan, so items only appeared after a Jellyfin restart). Cleaned up server card layout: all inputs now use proper label/inputContainer structure matching the rest of the config page.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.6/jellyfink_1.6.6.0.zip",
+        "checksum": "4f7fe9bc4780cb5dd79a36881c3dbcbf",
+        "timestamp": "2026-06-10T20:00:00Z"
+      },
+      {
+        "version": "1.6.5.0",
+        "changelog": "Simplified config page: removed the logo header and accordion sections, plain section headings and flat layout.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.5/jellyfink_1.6.5.0.zip",
+        "checksum": "6381171fdd55f73fbd85070123d2fd60",
+        "timestamp": "2026-06-10T19:00:00Z"
+      },
+      {
+        "version": "1.6.4.0",
+        "changelog": "Fix delta sync perpetuation: if .strm files are missing on disk despite an existing sync state (e.g., after upgrading from 1.6.2), the state is reset and a full re-sync runs automatically. Fix library scan after sync: replaced ValidateChildren (no-op on CollectionFolder in JF 10.11) with ILibraryMonitor.ReportFileSystemChanged, which is the same mechanism as the built-in file watcher and reliably triggers background indexing of new items.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.4/jellyfink_1.6.4.0.zip",
+        "checksum": "1deeaf316f3f462ee6bc15ff70375891",
+        "timestamp": "2026-06-10T18:30:00Z"
+      },
+      {
+        "version": "1.6.3.0",
+        "changelog": "Fix movie pruning for merged libraries: edition-tag suffix in filenames no longer causes all movies to be deleted on every sync; improved library scan after sync (PathInfos fallback + INFO-level logging so scan progress is visible in the log).",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.3/jellyfink_1.6.3.0.zip",
+        "checksum": "8d675f0a491a5bdf74f3568266bacfe9",
+        "timestamp": "2026-06-10T18:00:00Z"
+      },
+      {
+        "version": "1.6.2.0",
+        "changelog": "Fix library scan (ValidateChildren instead of ValidateMediaLibrary which returns immediately in JF 10.11); redesigned config page with centered header, underline tabs, and collapsible accordion sections.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.2/jellyfink_1.6.2.0.zip",
+        "checksum": "26bc686814bd695f743ef6ea696b02d8",
+        "timestamp": "2026-06-10T17:00:00Z"
+      },
+      {
+        "version": "1.6.1.0",
+        "changelog": "Fix merged-library path being re-added on every resync; fix config page checkbox rendering.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.1.0/jellyfink_1.6.1.0.zip",
+        "checksum": "769ccf1e033ba9bc43c4a501bdea5b7e",
+        "timestamp": "2026-06-10T16:19:15Z"
+      },
+      {
+        "version": "1.6.0.0",
+        "changelog": "Remove subtitle download, increase API timeout to 300s, redesigned config page.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.6.0.0/jellyfink_1.6.0.0.zip",
+        "checksum": "8c40918bb12e3ed6e6a4a1febf39682b",
+        "timestamp": "2026-06-10T15:59:28Z"
+      },
+      {
+        "version": "1.5.1.0",
+        "changelog": "1.5.1 — improved config page: every setting now explains what it does and whether to enable it",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.5.1.0/jellyfink_1.5.1.0.zip",
+        "checksum": "fbeabbeaa6494fd3af295d0fd5ff6fec",
+        "timestamp": "2026-06-10T13:38:40Z"
+      },
+      {
+        "version": "1.5.0.0",
+        "changelog": "1.5.0 — merge remote libraries into existing local ones: pick a local library from the dropdown and Jellyfink adds its folder as an extra path; Jellyfin version-groups matching items with a 'Remote · <server>' label in the picker",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.5.0.0/jellyfink_1.5.0.0.zip",
+        "checksum": "692610fad46445b640be2415bfcec54d",
+        "timestamp": "2026-06-10T12:43:52Z"
+      },
+      {
+        "version": "1.4.4.0",
+        "changelog": "1.4.4 — subtitle download timeout raised from 45s to 120s (configurable in Subtitles tab) to fix timeouts on slow remote servers; fixed file-pruning bracket-pattern bug where items with [id] in filename left orphaned .nfo/.jpg sidecars",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.4.0/jellyfink_1.4.4.0.zip",
+        "checksum": "ad4dd845755d24c76859d40ee8102f28",
+        "timestamp": "2026-06-10T11:29:30Z"
+      },
+      {
+        "version": "1.4.3.0",
+        "changelog": "1.4.3 — fix subtitle sidecar cleanup (bracket in item id broke file pattern matching); badge now re-applies on every sync instead of once, so it survives Jellyfin collage regeneration",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.3.0/jellyfink_1.4.3.0.zip",
+        "checksum": "9e110c77a9c2043c3d29973599b96ea5",
+        "timestamp": "2026-06-10T11:30:00Z"
+      },
+      {
+        "version": "1.4.2.0",
+        "changelog": "1.4.2 — subtitle sidecar cleanup on disable, badge auto-recovery after JF collage regeneration, library scan always runs after sync",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.2.0/jellyfink_1.4.2.0.zip",
+        "checksum": "f034ac83d76f316895d5e38e0020ed65",
+        "timestamp": "2026-06-10T10:55:00Z"
+      },
+      {
+        "version": "1.4.1.0",
+        "changelog": "1.4.1 — bug-fix release. Delta sync now uses a clock-skew safety buffer and applies content filters when pruning; one bad item/library no longer aborts the rest of a sync; credential encryption no longer has a save-time race; hardened path handling (no stack overflow on huge names, filename length caps); rate-limit/throttle maps evict stale entries instead of resetting; assorted token/asset/live-sync robustness fixes.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.1.0/jellyfink_1.4.1.0.zip",
+        "checksum": "05118efd3ef9b86acfc181d078afcf1f",
+        "timestamp": "2026-06-10T06:07:47Z"
+      },
+      {
+        "version": "1.4.0.0",
+        "changelog": "1.4.0 — Optionally mirror the remote's playlists locally (Advanced -> Mirror remote playlists), built from imported items and owned by the mapped/first local user.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.0.0/jellyfink_1.4.0.0.zip",
+        "checksum": "aab700f01b810720d5d7182194716704",
+        "timestamp": "2026-06-10T05:25:00Z"
+      },
+      {
+        "version": "1.3.0.0",
+        "changelog": "1.3.0 — Security: remote credentials (passwords, API keys, tokens) and the stream-signing secret are now encrypted at rest in the plugin config, with the key stored separately. Existing configs are upgraded automatically on the next save; no action needed.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.3.0.0/jellyfink_1.3.0.0.zip",
+        "checksum": "85f1bcb8bd4cbb33ab7d9530dcfbe4e3",
+        "timestamp": "2026-06-10T05:14:49Z"
+      },
+      {
+        "version": "1.2.0.0",
+        "changelog": "1.2.0 — Delta sync for movie libraries (opt-in, in Advanced): after the first sync, only movies that changed on the remote are re-fetched and rebuilt, so repeat syncs are much faster on large libraries. Deletions and watch state are still handled correctly via a lightweight full scan. TV always does a full pass.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.2.0.0/jellyfink_1.2.0.0.zip",
+        "checksum": "840ad6c82ea98b7f231ab1b772e2d3ed",
+        "timestamp": "2026-06-10T05:09:29Z"
+      },
+      {
+        "version": "1.1.0.0",
+        "changelog": "1.1.0 — faster TV sync (parallel), subtitle downloads no longer retry slow/failing tracks every sync (one-time attempt with a longer timeout), live sync activity + an in-app log viewer and configurable log retention, opt-in success notifications, config validation before save, and select-all in the library picker. Quality: clean build (warnings-as-errors), more tests, CI.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.1.0.0/jellyfink_1.1.0.0.zip",
+        "checksum": "5a8ac57424abeb502ca810ae13320c11",
+        "timestamp": "2026-06-09T22:26:57Z"
+      },
+      {
+        "version": "1.0.0.0",
+        "changelog": "Jellyfink 1.0 — share remote Jellyfin libraries locally (no media copied). Movies & TV, secure Proxy streaming, remote metadata, two-way watch state & favorites, subtitle sidecars, REMOTE library badge, tabbed config page, and a dedicated jellyfink.log. Requires Jellyfin 10.11+.",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.0.0.0/jellyfink_1.0.0.0.zip",
+        "checksum": "d9a5c7cd4600857628eccdaa1c2be4f7",
+        "timestamp": "2026-06-09T21:59:33Z"
+      }
+    ]
+  }
 ]
