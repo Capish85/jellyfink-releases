@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.20.13.0",
+      "changelog": "Fix sync scheduling: live-sync no longer queues behind a running sync (SyncStatus.Running guard) or within 5 min of completion. SaveConfig always corrects the JF task trigger interval. JF library scans now only fire for structural .strm changes, not NFO/metadata updates.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.13.0/jellyfink_1.20.13.0.zip",
+      "checksum": "0dfc2b8afec09aee616a7f4112ac9792",
+      "timestamp": "2026-06-17T01:35:38Z"
+    },
+    {
       "version": "1.20.12.0",
       "changelog": "Performance and allocation improvements: burst log coalescing, allocation-free merge grouping, static cached arrays throughout, O(1) path sanitisation, lock-free SyncStatus, WS URL prefix-swap, direct hex validation loop.",
       "targetAbi": "10.11.0.0",
