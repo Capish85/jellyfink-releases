@@ -9,6 +9,14 @@
     "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
     "versions": [
       {
+        "version": "1.20.19.0",
+        "changelog": "Release 1.20.19.0",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.19.0/jellyfink_1.20.19.0.zip",
+        "checksum": "c65bd472c032eedd08c8293c21b49b6f",
+        "timestamp": "2026-06-24T22:38:39Z"
+      },
+      {
         "version": "1.20.18.0",
         "changelog": "Release 1.20.18.0",
         "targetAbi": "10.11.0.0",
