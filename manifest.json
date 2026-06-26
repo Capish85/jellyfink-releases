@@ -9,6 +9,14 @@
     "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
     "versions": [
       {
+        "version": "1.20.20.0",
+        "changelog": "Release 1.20.20.0",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.20.0/jellyfink_1.20.20.0.zip",
+        "checksum": "ab0684387185a847bd6b090687e7b87f",
+        "timestamp": "2026-06-26T17:34:11Z"
+      },
+      {
         "version": "1.20.19.0",
         "changelog": "Release 1.20.19.0",
         "targetAbi": "10.11.0.0",
@@ -154,7 +162,7 @@
       },
       {
         "version": "1.16.0.0",
-        "changelog": "Robustness and UX round: (1) WebSocket listener now aborts connections that send >64 KB messages (prevents unbounded memory growth from hostile servers). (2) IsRemoteReachableAsync caches reachability per server for 30 s so Range/seek requests don't each fire a round-trip to the remote. (3) Playlists are now kept in sync \u2014 membership is compared on each run and the playlist is rebuilt when it changes, not just created once. (4) Max bitrate field in server config is now labelled Kbps with automatic \u00d71000 conversion, so you type 20000 instead of 20000000 for 20 Mbps.",
+        "changelog": "Robustness and UX round: (1) WebSocket listener now aborts connections that send >64 KB messages (prevents unbounded memory growth from hostile servers). (2) IsRemoteReachableAsync caches reachability per server for 30 s so Range/seek requests don't each fire a round-trip to the remote. (3) Playlists are now kept in sync — membership is compared on each run and the playlist is rebuilt when it changes, not just created once. (4) Max bitrate field in server config is now labelled Kbps with automatic ×1000 conversion, so you type 20000 instead of 20000000 for 20 Mbps.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.16.0/jellyfink_1.16.0.0.zip",
         "checksum": "b069994b6d9865d07fc1709ef329e324",
@@ -162,7 +170,7 @@
       },
       {
         "version": "1.15.0.0",
-        "changelog": "Code quality and correctness round: (1) GetLocalLibraries now filters out Jellyfink-managed libraries from the merge-target dropdown so you can't accidentally select one. (2) SyncCollections diffs current vs expected members \u2014 stale items are now removed, not just accumulated. (3) ResolveCache in PlaybackReporter evicts only deleted .strm entries instead of wiping everything at 8192 items. (4) ProxyAsync uses a 256 KB copy buffer for better video throughput. (5) TMDB is now always written as the default <uniqueid> in NFOs so Jellyfin's scanner matches items reliably. (6) People in NFOs built in a single pass (directors, writers, then actors). (7) Authorization header now reports the real plugin version instead of hardcoded 0.1.0. (8) MergeLibraryMoviesAsync / MergeLibraryEpisodesAsync share a common LinkVersionGroupAsync helper.",
+        "changelog": "Code quality and correctness round: (1) GetLocalLibraries now filters out Jellyfink-managed libraries from the merge-target dropdown so you can't accidentally select one. (2) SyncCollections diffs current vs expected members — stale items are now removed, not just accumulated. (3) ResolveCache in PlaybackReporter evicts only deleted .strm entries instead of wiping everything at 8192 items. (4) ProxyAsync uses a 256 KB copy buffer for better video throughput. (5) TMDB is now always written as the default <uniqueid> in NFOs so Jellyfin's scanner matches items reliably. (6) People in NFOs built in a single pass (directors, writers, then actors). (7) Authorization header now reports the real plugin version instead of hardcoded 0.1.0. (8) MergeLibraryMoviesAsync / MergeLibraryEpisodesAsync share a common LinkVersionGroupAsync helper.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.15.0/jellyfink_1.15.0.0.zip",
         "checksum": "3d22b793154b3b3e2dd5d5c3f97e290c",
@@ -202,7 +210,7 @@
       },
       {
         "version": "1.10.0.0",
-        "changelog": "Fix duplicates when merging with a local library: remove the {edition-Remote} tag from .strm filenames. Jellyfin interprets edition tags as separate library entries (two posters). Without the tag, Jellyfin matches by provider ID (TMDB/IMDB from the .nfo) and merges local and remote versions of the same title into a single item \u2014 one poster, one 'Play Version' picker on play. Existing edition-tagged files are automatically cleaned up on the first sync after updating.",
+        "changelog": "Fix duplicates when merging with a local library: remove the {edition-Remote} tag from .strm filenames. Jellyfin interprets edition tags as separate library entries (two posters). Without the tag, Jellyfin matches by provider ID (TMDB/IMDB from the .nfo) and merges local and remote versions of the same title into a single item — one poster, one 'Play Version' picker on play. Existing edition-tagged files are automatically cleaned up on the first sync after updating.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.10.0/jellyfink_1.10.0.0.zip",
         "checksum": "df382afb78d207c8557083aefafdd13a",
@@ -210,7 +218,7 @@
       },
       {
         "version": "1.9.0.0",
-        "changelog": "Fix stream 401: cache the HMAC signing secret for the process lifetime so JF's internal config-reload mechanism (which bypasses DecryptConfig) cannot corrupt the in-memory key. Previously, base.SaveConfiguration() could replace the in-memory Configuration with an encrypted clone, causing GetOrCreateSecret to decode ciphertext as key bytes \u2014 producing a different HMAC from what signed the .strm tokens, giving 401 on every play attempt after a sync. Now the secret is loaded once on first use and held in a static cache; even if the Configuration object is replaced, the same key is used throughout the JF session. Also adds encrypted-form detection as a fallback and more diagnostic logging in the stream endpoint.",
+        "changelog": "Fix stream 401: cache the HMAC signing secret for the process lifetime so JF's internal config-reload mechanism (which bypasses DecryptConfig) cannot corrupt the in-memory key. Previously, base.SaveConfiguration() could replace the in-memory Configuration with an encrypted clone, causing GetOrCreateSecret to decode ciphertext as key bytes — producing a different HMAC from what signed the .strm tokens, giving 401 on every play attempt after a sync. Now the secret is loaded once on first use and held in a static cache; even if the Configuration object is replaced, the same key is used throughout the JF session. Also adds encrypted-form detection as a fallback and more diagnostic logging in the stream endpoint.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.9.0/jellyfink_1.9.0.0.zip",
         "checksum": "1ab8bc399baf0e1b64aa2ab62970703b",
@@ -314,7 +322,7 @@
       },
       {
         "version": "1.5.1.0",
-        "changelog": "1.5.1 \u2014 improved config page: every setting now explains what it does and whether to enable it",
+        "changelog": "1.5.1 — improved config page: every setting now explains what it does and whether to enable it",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.5.1.0/jellyfink_1.5.1.0.zip",
         "checksum": "fbeabbeaa6494fd3af295d0fd5ff6fec",
@@ -322,7 +330,7 @@
       },
       {
         "version": "1.5.0.0",
-        "changelog": "1.5.0 \u2014 merge remote libraries into existing local ones: pick a local library from the dropdown and Jellyfink adds its folder as an extra path; Jellyfin version-groups matching items with a 'Remote \u00b7 <server>' label in the picker",
+        "changelog": "1.5.0 — merge remote libraries into existing local ones: pick a local library from the dropdown and Jellyfink adds its folder as an extra path; Jellyfin version-groups matching items with a 'Remote · <server>' label in the picker",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.5.0.0/jellyfink_1.5.0.0.zip",
         "checksum": "692610fad46445b640be2415bfcec54d",
@@ -330,7 +338,7 @@
       },
       {
         "version": "1.4.4.0",
-        "changelog": "1.4.4 \u2014 subtitle download timeout raised from 45s to 120s (configurable in Subtitles tab) to fix timeouts on slow remote servers; fixed file-pruning bracket-pattern bug where items with [id] in filename left orphaned .nfo/.jpg sidecars",
+        "changelog": "1.4.4 — subtitle download timeout raised from 45s to 120s (configurable in Subtitles tab) to fix timeouts on slow remote servers; fixed file-pruning bracket-pattern bug where items with [id] in filename left orphaned .nfo/.jpg sidecars",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.4.0/jellyfink_1.4.4.0.zip",
         "checksum": "ad4dd845755d24c76859d40ee8102f28",
@@ -338,7 +346,7 @@
       },
       {
         "version": "1.4.3.0",
-        "changelog": "1.4.3 \u2014 fix subtitle sidecar cleanup (bracket in item id broke file pattern matching); badge now re-applies on every sync instead of once, so it survives Jellyfin collage regeneration",
+        "changelog": "1.4.3 — fix subtitle sidecar cleanup (bracket in item id broke file pattern matching); badge now re-applies on every sync instead of once, so it survives Jellyfin collage regeneration",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.3.0/jellyfink_1.4.3.0.zip",
         "checksum": "9e110c77a9c2043c3d29973599b96ea5",
@@ -346,7 +354,7 @@
       },
       {
         "version": "1.4.2.0",
-        "changelog": "1.4.2 \u2014 subtitle sidecar cleanup on disable, badge auto-recovery after JF collage regeneration, library scan always runs after sync",
+        "changelog": "1.4.2 — subtitle sidecar cleanup on disable, badge auto-recovery after JF collage regeneration, library scan always runs after sync",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.2.0/jellyfink_1.4.2.0.zip",
         "checksum": "f034ac83d76f316895d5e38e0020ed65",
@@ -354,7 +362,7 @@
       },
       {
         "version": "1.4.1.0",
-        "changelog": "1.4.1 \u2014 bug-fix release. Delta sync now uses a clock-skew safety buffer and applies content filters when pruning; one bad item/library no longer aborts the rest of a sync; credential encryption no longer has a save-time race; hardened path handling (no stack overflow on huge names, filename length caps); rate-limit/throttle maps evict stale entries instead of resetting; assorted token/asset/live-sync robustness fixes.",
+        "changelog": "1.4.1 — bug-fix release. Delta sync now uses a clock-skew safety buffer and applies content filters when pruning; one bad item/library no longer aborts the rest of a sync; credential encryption no longer has a save-time race; hardened path handling (no stack overflow on huge names, filename length caps); rate-limit/throttle maps evict stale entries instead of resetting; assorted token/asset/live-sync robustness fixes.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.1.0/jellyfink_1.4.1.0.zip",
         "checksum": "05118efd3ef9b86acfc181d078afcf1f",
@@ -362,7 +370,7 @@
       },
       {
         "version": "1.4.0.0",
-        "changelog": "1.4.0 \u2014 Optionally mirror the remote's playlists locally (Advanced -> Mirror remote playlists), built from imported items and owned by the mapped/first local user.",
+        "changelog": "1.4.0 — Optionally mirror the remote's playlists locally (Advanced -> Mirror remote playlists), built from imported items and owned by the mapped/first local user.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.4.0.0/jellyfink_1.4.0.0.zip",
         "checksum": "aab700f01b810720d5d7182194716704",
@@ -370,7 +378,7 @@
       },
       {
         "version": "1.3.0.0",
-        "changelog": "1.3.0 \u2014 Security: remote credentials (passwords, API keys, tokens) and the stream-signing secret are now encrypted at rest in the plugin config, with the key stored separately. Existing configs are upgraded automatically on the next save; no action needed.",
+        "changelog": "1.3.0 — Security: remote credentials (passwords, API keys, tokens) and the stream-signing secret are now encrypted at rest in the plugin config, with the key stored separately. Existing configs are upgraded automatically on the next save; no action needed.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.3.0.0/jellyfink_1.3.0.0.zip",
         "checksum": "85f1bcb8bd4cbb33ab7d9530dcfbe4e3",
@@ -378,7 +386,7 @@
       },
       {
         "version": "1.2.0.0",
-        "changelog": "1.2.0 \u2014 Delta sync for movie libraries (opt-in, in Advanced): after the first sync, only movies that changed on the remote are re-fetched and rebuilt, so repeat syncs are much faster on large libraries. Deletions and watch state are still handled correctly via a lightweight full scan. TV always does a full pass.",
+        "changelog": "1.2.0 — Delta sync for movie libraries (opt-in, in Advanced): after the first sync, only movies that changed on the remote are re-fetched and rebuilt, so repeat syncs are much faster on large libraries. Deletions and watch state are still handled correctly via a lightweight full scan. TV always does a full pass.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.2.0.0/jellyfink_1.2.0.0.zip",
         "checksum": "840ad6c82ea98b7f231ab1b772e2d3ed",
@@ -386,7 +394,7 @@
       },
       {
         "version": "1.1.0.0",
-        "changelog": "1.1.0 \u2014 faster TV sync (parallel), subtitle downloads no longer retry slow/failing tracks every sync (one-time attempt with a longer timeout), live sync activity + an in-app log viewer and configurable log retention, opt-in success notifications, config validation before save, and select-all in the library picker. Quality: clean build (warnings-as-errors), more tests, CI.",
+        "changelog": "1.1.0 — faster TV sync (parallel), subtitle downloads no longer retry slow/failing tracks every sync (one-time attempt with a longer timeout), live sync activity + an in-app log viewer and configurable log retention, opt-in success notifications, config validation before save, and select-all in the library picker. Quality: clean build (warnings-as-errors), more tests, CI.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.1.0.0/jellyfink_1.1.0.0.zip",
         "checksum": "5a8ac57424abeb502ca810ae13320c11",
@@ -394,7 +402,7 @@
       },
       {
         "version": "1.0.0.0",
-        "changelog": "Jellyfink 1.0 \u2014 share remote Jellyfin libraries locally (no media copied). Movies & TV, secure Proxy streaming, remote metadata, two-way watch state & favorites, subtitle sidecars, REMOTE library badge, tabbed config page, and a dedicated jellyfink.log. Requires Jellyfin 10.11+.",
+        "changelog": "Jellyfink 1.0 — share remote Jellyfin libraries locally (no media copied). Movies & TV, secure Proxy streaming, remote metadata, two-way watch state & favorites, subtitle sidecars, REMOTE library badge, tabbed config page, and a dedicated jellyfink.log. Requires Jellyfin 10.11+.",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.0.0.0/jellyfink_1.0.0.0.zip",
         "checksum": "d9a5c7cd4600857628eccdaa1c2be4f7",
