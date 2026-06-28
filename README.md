@@ -39,6 +39,10 @@ Jellyfink writes lightweight `.strm` files (stream links) and `.nfo` metadata fi
 - **Targeted library scan** — after writing changes, only the affected Jellyfink folders are re-indexed, not your entire server. If nothing changed, the scan is skipped entirely.
 - **Echo guard (bidirectional-safe)** — if two servers add each other as remotes, content one server imported from the other is detected and skipped instead of being re-imported and daisy-chained. Requires admin-level remote credentials (Jellyfin hides file paths from regular users).
 - **Quiet hours** — suppress scheduled syncs during a configured time window.
+- **Force full re-sync** — a one-click button clears delta state and re-checks every item against the remote, for recovering from a stale state or backfilling after you enable a new option.
+
+### Subtitles
+- **External subtitle sync** (optional) — mirrors the remote's separate subtitle files (`.srt`/`.ass`/`.vtt`) next to each item so they work even when the source server is offline. Embedded subtitles already pass through the stream, so this covers only external sidecar files. Downloaded subtitles are validated, and separate language / forced / SDH tracks are kept distinct.
 
 ### Watch state and metadata
 - **Two-way watch state** — played status and resume positions sync from the remote. The newer timestamp wins on conflict.
@@ -52,7 +56,8 @@ Jellyfink writes lightweight `.strm` files (stream links) and `.nfo` metadata fi
 - **Manage library metadata settings** — prevents Jellyfin from re-scraping metadata that Jellyfink already wrote.
 
 ### Operations
-- **Failure webhooks** — POST a message to a Discord or generic webhook on sync failure or unreachable server.
+- **Webhooks** — POST a message to a Discord or generic webhook on sync failure, unreachable server, or recovery (with an optional digest on successful syncs).
+- **Test playback** — verify a server end-to-end from the config page: it resolves and fetches a real stream the same way a `.strm` does on Play, so you can confirm streaming works before relying on it.
 - **Stream audit log** — log every proxied stream request.
 - **Configurable log rotation** (size and backup count).
 - Per-server **online/offline health indicator** on the config page.
