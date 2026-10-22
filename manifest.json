@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.20.33.0",
+      "changelog": "Server-to-server traffic (sync, API calls, proxied streams, live sync) now prefers the server's Fallback URL (LAN address) and uses the public URL only when handing a stream URL to a player. New per-server option PreferFallbackForServerTraffic (default on); falls back to the public URL if the LAN address fails.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.33.0/jellyfink_1.20.33.0.zip",
+      "checksum": "1ec322b9536bde2a55b2f2d302cf92af",
+      "timestamp": "2026-10-22T06:06:08Z"
+    },
+    {
       "version": "1.20.32.0",
       "changelog": "Subtitles now work on remote versions of merged titles (synced and backfilled automatically). New optional per-server Fallback URL used when the main URL is unreachable. Fixes: post-sync scan not running for newly registered merged paths, interrupted syncs leaving new items unscanned, mixed-content libraries dropped on save, scoped-sync and live-sync issues. Note: the first sync after updating is a full one.",
       "targetAbi": "10.11.0.0",
