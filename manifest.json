@@ -9,6 +9,14 @@
   "imageUrl": "https://raw.githubusercontent.com/Capish85/jellyfink-releases/main/jellyfink.png",
   "versions": [
     {
+      "version": "1.20.36.0",
+      "changelog": "Down remotes no longer stall playback: Jellyfink tracks each remote server's health; streams from a down server fail at once instead of retrying for ~35s, and merged items automatically play a working copy (local first, then any remote that is up), labelling copies on a down server as offline. Recovers on its own when the server is back. Includes all 1.20.35.0 fixes.",
+      "targetAbi": "10.11.0.0",
+      "sourceUrl": "https://github.com/Capish85/jellyfink-releases/releases/download/v1.20.36.0/jellyfink_1.20.36.0.zip",
+      "checksum": "2afa054a80ac5b60170a6d34ad686e21",
+      "timestamp": "2026-10-25T23:44:18Z"
+    },
+    {
       "version": "1.20.35.0",
       "changelog": "Merged libraries: local copy now listed first in the version dropdown on item pages too, remote copies labelled with server name; same-name remote series no longer merged into one show; version merge keeps existing local primaries. Safety: mass-removal protection (refuses to delete >50% or all of a library when a remote reports it empty), wrong credential key no longer destroys stored credentials. Failover: timeouts and blackholed LAN addresses now fail over to the other URL (10s connect timeout), concurrent failures no longer flip back to a dead URL. Delta sync: filter/cap/merge changes trigger a full sync; incomplete fetches no longer advance the watermark; live-sync changes during a sync are deferred, not dropped. Plus fixes for subtitle re-download churn, NFO rewrites during failover, config page resetting merges/server flags, lean library options wiping other settings, Linux long-name and case-rename issues.",
       "targetAbi": "10.11.0.0",
